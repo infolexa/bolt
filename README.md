@@ -94,7 +94,8 @@ The format for Widget routes is like this:
 
 
 
-Widgets are requests to a module's controller actions which are not accessible via the main request. The change in route.php is the addition of a uniquely generated token that is appended to the uri when a widget route is set. This is to prevent public access. 
+Widgets are requests to a module's controller actions which are not accessible via the main request. The change in route.php is the addition of a uniquely generated token that is prefixed to the uri when a widget route is set. 
+This is to prevent public access and to have it's own namespace so that the arrangement of route params need not to be unique from other widget routes.
 
 In order to output the response of a widget, it must be rendered using Widgets::load('position', $chrome) most commonly inside the Theme's template. More explanation about the Widgets and Themes on another chapter.
 
@@ -110,24 +111,26 @@ So What's so Different About this CMS?
 
 This CMS is being developed alongside a huge project. So I'll make sure it's as usable/stable as possible when it's released.
 
-I'm coming from an extensive CMS experience primarily with Joomla, then Drupal and Wordpress. 
-I think I have a pretty good idea of how to build a good CMS. This project is inspired by those Big 3. If there is a Framework that can take the best features from those CMSs and put it into one dream CMS, that's Kohana 3. 
-I think that using Kohana 3 in this CMS will solve almost all extensibility problems that are faced by those CMSs. 
+Me and my friends who'll contribute are coming from an extensive CMS experience primarily with Joomla, then Drupal and Wordpress. 
+I think we have a pretty good idea of how to build a good CMS. This project is inspired by those Big 3. If there is a Framework that can take the best features from those CMSs and put it into one dream CMS, that's Kohana 3. 
 
-So the difference of this CMS from other Kohana 3 CMSs will be the "experience". Take Wordpress's ease of use, Drupal's modularity and customizability, then Joomla's balance of user-friendliness and power, 
-put it into one CMS -- that's HoneyComb CMS. At least that's what I'm planning.
+So the difference of this CMS from other Kohana 3 CMSs will be the "experience". Take Wordpress's ease of use, Drupal's modularity, Joomla's balance of both,
+then the powerful flexibility of Kohana 3's HMVC Framework, put it into one CMS -- that's HoneyComb CMS. At least that's what we're planning.
 
 Of course everyone can dream and promise all those nice things. But I'm determined to make this dream come true because of one practical reason: our livelihood depends on it. 
 However, this practical reason is not my primary reason. My primary reason is simple: I enjoy doing it.
 
-Here are some development principles that I follow:
-====================================================
+Another difference I can think of, is that this project is not created by a programming genius. It will not have the tendency of being too cryptic that only geeks can understand.
+We'll get principles from Apple style, not Linux style.
+
+Here are some development principles that this project is following:
+====================================================================
 
 * **Pollute the Kohana Core as little as possible** - In this case I only extended 3 files with very minimal changes
 * **Use what's available** - I don't have(and I don't want) to code everything, I'll rely on the Kohana community to provide libraries like Sprig, Auth, AACL, MPTT, etc.
 * **Focus on the Users first** - In the development process, I just built the core(which is basically done already) then my focus will move to the user interface. 
 I would love to provide some "developer friendly" tools like easy creation of tables, and database syncing utilities but I think the developers can take care of themselves. 
-It's the end users that I'll have to focus on first.
+It's the end users that we'll have to focus on first.
 * **Easy Come, Easy Go** - Existing apps for Kohana 3 can easily be used or ported inside HoneyComb. Apps for HoneyComb can also be easily used outside of it.
 
 Some Technical Mumbo-Jumbo
