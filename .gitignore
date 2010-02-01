@@ -1,4 +1,6 @@
+Icon?
 .DS_Store
+.gitmodules
 modules/auth
 modules/codebench
 modules/database
