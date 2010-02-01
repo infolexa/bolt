@@ -164,7 +164,9 @@ Example Widget Configuration:
 				'show_where'	=> array(
 									'all',			//URI's where you want the widget to be shown.
 								),
-				'hide_where'	=> array(),
+				'hide_where'	=> array(
+									'users/login'	//URI's where you want the widget to be hidden. Use this only when show_where is set to "all"
+								),
 				//various parameters that are accepted by the route.
 				'params'		=> array(
 									'layout' 	=> 'vertical',
@@ -185,9 +187,7 @@ Example Widget Configuration:
 									'users/registration',
 									'members/registration'
 								),
-				'hide_where'	=> array(
-									'users/login'		//URI's where you want the widget to be hidden
-								),
+				'hide_where'	=> array(),
 				'params'		=> array(
 									'file' => 'regsteps',	//this file will be searched inside views/statichtml/regsteps.php
 									'class' => ''
@@ -196,6 +196,33 @@ Example Widget Configuration:
 			),
 		)
 	);
+
+In the template.php of the Theme, a widget can be loaded like this:
+
+	<div>
+		<?php echo Widgets::load('left', 'xhtml') ?>
+	</div>
+
+
+This widget will then be rendered like this
+
+	<div>
+		<div class="widget">
+			<h3>Main Menu</h3>
+			<div class="content">
+				
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/page/one">Page 1</a></li>
+					<li><a href="/page/two">Page 2</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+
+The divs surrounding the **ul** tag is the "chrome". The xhtml chrome is used here. It can easily be changed using the Theme's views overrides.If the chrome is raw, only the **ul** html will be rendered.
+The chrome is very useful for themers. They can wrap the modules around anything they want for styling.
 
 More on Themes
 --------------
