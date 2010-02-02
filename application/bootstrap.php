@@ -12,7 +12,7 @@ Kohana::modules(array('database' => MODPATH.'database', 'honeycomb'  => MODPATH.
 
 Apps::load();
 
-Route::set('default', '(<file>(.html))', array(
+Route::set('app/default', '(<file>(.html))', array(
 		'file' => '[a-z\-]*+'
 	))
 	->defaults(array(
