@@ -1,9 +1,2 @@
 Icon?
 .DS_Store
-modules/auth
-modules/codebench
-modules/database
-modules/image
-modules/orm
-modules/pagination
-modules/userguide
