@@ -49,3 +49,7 @@
 [submodule "modules/userguide"]
 	path = modules/userguide
 	url = git://github.com/kohana/userguide.git
+	
+[submodule "system"]
+	path = system
+	url = git://github.com/kohana/kohana.git
