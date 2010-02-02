@@ -4,11 +4,23 @@
 
 date_default_timezone_set('Asia/Manila');
 spl_autoload_register(array('Kohana', 'auto_load'));
-Kohana::init(array('base_url' => str_replace(basename($_SERVER['SCRIPT_NAME']),'',$_SERVER['SCRIPT_NAME']), 'index_file' => 'index.php'));
-Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
+Kohana::init(array('base_url' => str_replace(basename($_SERVER['SCRIPT_NAME']),'',$_SERVER['SCRIPT_NAME']), 'index_file' => ''));
+//Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
 Kohana::$config->attach(new Kohana_Config_File);
-Kohana::modules(array('honeycomb'  => MODPATH.'honeycomb'));
+Kohana::modules(array('database' => MODPATH.'database', 'honeycomb'  => MODPATH.'honeycomb'));
+
+
 Apps::load();
+
+Route::set('default', '(<file>(.html))', array(
+		'file' => '[a-z\-]*+'
+	))
+	->defaults(array(
+		'controller' => 'statichtml',
+		'action'     => 'index',
+		'file'	 	 => 'about'
+	));
+
 $response = Request::instance()->execute()->send_headers()->response;
 if (Request::$is_ajax OR Request::instance()->action == 'media')
 {
