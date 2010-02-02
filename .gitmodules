@@ -12,11 +12,11 @@
 
 [submodule "Sprig by Banks"]
     path = modules/sprig
-    url = git://github.com/shadowhand/sprig.git
+    url = git://github.com/banks/sprig.git
 
 [submodule "AACL by Banks"]
     path = modules/aacl
-    url = git://github.com/shadowhand/sprig-aacl.git
+    url = git://github.com/banks/aacl.git
 
 [submodule "Kolanos Captcha"]
     path = modules/captcha
