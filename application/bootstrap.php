@@ -58,6 +58,7 @@ Kohana::modules(array('honeycomb'  => MODPATH.'honeycomb'));
  * Process#2 Load all Modules as controlled by HoneyComb
  * 	TOD0: Load this from a config file
  */
+
 Apps::load();
 
 /**
@@ -65,14 +66,12 @@ Apps::load();
  * If no source is specified, the URI will be automatically detected.
  * HoneyComb catches the main request's response.
  */
-$response = Request::instance()
-	->execute()
-	->send_headers()
-	->response;
-	
-//TODO: Run event pre-render and post-render
 
+$response = Request::instance()->execute()->send_headers()->response;
+
+//TODO: Run event pre-render and post-render
 //Output the response without the template for Ajax or Media requests
+
 if (Request::$is_ajax OR Request::instance()->action == 'media')
 {
 	echo $response;
@@ -88,6 +87,5 @@ $token = HTML::token();
 
 //Put the <head> items inside the template then output the response resulting in a complete webpage.
 echo str_replace('[HEAD-'.$token.']', $head, $content);
-
 
 
