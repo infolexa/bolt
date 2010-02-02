@@ -1,0 +1,23 @@
+[submodule "HoneyComb Users"]
+        path = modules/users
+        url = git@github.com:raeldc/HoneyComb-Users.git
+
+[submodule "HoneyComb Core"]
+    path = modules/honeycomb
+    url = git@github.com:raeldc/HoneyComb-Core.git
+
+[submodule "HoneyComb Pages"]
+    path = modules/pages
+    url = git@github.com:raeldc/HoneyComb-Pages.git
+
+[submodule "Sprig by Banks"]
+    path = modules/sprig
+    url = git://github.com/shadowhand/sprig.git
+
+[submodule "AACL by Banks"]
+    path = modules/aacl
+    url = git://github.com/shadowhand/sprig-aacl.git
+
+[submodule "Kolanos Captcha"]
+    path = modules/captcha
+    url = git://github.com/kolanos/kohana-captcha.git
