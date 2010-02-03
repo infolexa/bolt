@@ -12,13 +12,13 @@ Kohana::modules(array('database' => MODPATH.'database', 'honeycomb'  => MODPATH.
 
 Apps::load();
 
-Route::set('app/default', '(<file>(.html))', array(
+Route::set('app/statichtml', '(<file>(.html))', array(
 		'file' => '[a-z\-]*+'
 	))
 	->defaults(array(
 		'controller' => 'statichtml',
 		'action'     => 'index',
-		'file'	 	 => 'about'
+		'file'	 	 => 'welcome'
 	));
 
 $response = Request::instance()->execute()->send_headers()->response;
@@ -27,6 +27,7 @@ if (Request::$is_ajax OR Request::instance()->action == 'media')
 	echo $response;
 	exit;
 }
+
 $content = View::factory('template')->set('content', $response)->render();
 $head = HTML::head(TRUE);
 $token = HTML::token();
