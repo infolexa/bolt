@@ -53,3 +53,6 @@
 [submodule "system"]
 	path = system
 	url = git://github.com/kohana/core.git
+[submodule "modules/sprigauth"]
+	path = modules/sprigauth
+	url = git://github.com/banks/sprig-auth.git

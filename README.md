@@ -1,5 +1,18 @@
+The HoneyComb Manifesto
+=======================
+*by: Israel Dacanay Canasa*
+
+
 *This is an incomplete introduction to HoneyComb CMS. I should spend more time on coding ....*
 ----------------------------------------------------------------------------------------------
+
+Note to the Developer: In your hands are tremendous flexibility and power you've almost never heard of. 
+With this comes the great responsibility of making sure you don't mess up the whole site just because you don't know what you're doing.
+
+Here are where you can mess things up:
+
+* Inconsiderate/Irresponsible/Ignorant Routing
+* Misplaced Class/File Naming
 
 Some Terminologies used in HoneyComb CMS
 ========================================
