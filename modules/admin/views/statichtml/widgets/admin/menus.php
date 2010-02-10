@@ -13,8 +13,11 @@
 </ul>
 
 <h4>Web Pages</h4>
+<div>
+	<a href="#">New Page Group</a>
+</div>
 <ul>
-	<li><?php echo HTML::aroute('users/manage', array('app' => Apps::aliasof('users'), 'controller' => 'users', 'action' => 'list'), 'Users List') ?></li>
-	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'list'), 'User Groups') ?></li>
-	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'permissions', 'action' => 'list'), 'Group Permissions') ?></li>
+	<li><?php echo HTML::aroute('pages', array('group' => 'main-menu', 'action' => 'list'), 'Main Menu') ?></li>
+	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'list'), 'Footer Link') ?></li>
+	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'list'), 'Left Menu') ?></li>
 </ul>

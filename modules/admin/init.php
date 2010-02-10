@@ -9,7 +9,7 @@ Route::set('admin/widgets', 'widgets(/<type>(/<action>(/<id>)))', array('action'
 		'type'		 => 'site',
 		'id'		 => NULL
 	));
-
+	
 Permissions::set('admin/widgets', array(
 	'administer site widgets',
 	'administer admin widgets'
