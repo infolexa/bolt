@@ -14,10 +14,15 @@
 
 <h4>Web Pages</h4>
 <div>
-	<a href="#">New Page Group</a>
+<?php echo HTML::aroute('pages', array('group' => 'root', 'action' => 'create'), 'New Page Group') ?>
 </div>
 <ul>
-	<li><?php echo HTML::aroute('pages', array('group' => 'main-menu', 'action' => 'list'), 'Main Menu') ?></li>
-	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'list'), 'Footer Link') ?></li>
-	<li><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'list'), 'Left Menu') ?></li>
+	<?php
+	
+	$pages = Sprig::factory('page')->load();
+	$groups = $pages->children;
+	?>
+	<?php foreach ($groups as $group): ?>
+	<li><?php echo HTML::aroute('pages', array('group' => $group->alias, 'action' => 'list'), $group->title) ?></li>	
+	<?php endforeach ?>
 </ul>

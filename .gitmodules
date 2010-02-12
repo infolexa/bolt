@@ -56,6 +56,6 @@
 [submodule "modules/sprigauth"]
 	path = modules/sprigauth
 	url = git://github.com/banks/sprig-auth.git
-[submodule "sprig-mptt"]
-	path = sprig-mptt
+[submodule "modules/sprig-mptt"]
+	path = modules/sprig-mptt
 	url = git://github.com/banks/sprig-mptt.git
