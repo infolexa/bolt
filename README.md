@@ -53,7 +53,7 @@ Bolt will not limit module developers from having routes customized to their wan
 
 **A Simple Route Naming Convention**
 
-The only thing that Bolt requires in creating routes is their proper naming. Honeycomb needs to distiguish which routes are for Apps, Widgets, and Plugins.
+The only thing that Bolt requires in creating routes is their proper naming. Bolt needs to distiguish which routes are for Apps, Widgets, and Plugins.
 
 Routes for Apps are accessible via the Main Request.
 
