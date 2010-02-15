@@ -1,9 +1,9 @@
-The HoneyComb Manifesto
+The Bolt Book
 =======================
 *by: Israel Dacanay Canasa*
 
 
-*This is an incomplete introduction to HoneyComb CMS. I should spend more time on coding ....*
+*This is an incomplete introduction to Bolt CMS. I should spend more time on coding ....*
 ----------------------------------------------------------------------------------------------
 
 Note to the Developer: In your hands are tremendous flexibility and power you've almost never heard of. 
@@ -14,21 +14,21 @@ Here are where you can mess things up:
 * Inconsiderate/Irresponsible/Ignorant Routing
 * Misplaced Class/File Naming
 
-Some Terminologies used in HoneyComb CMS
+Some Terminologies used in Bolt CMS
 ========================================
 
 * **App** - The main content of a page. It is the primary Request instance. 
 * **Widget** - The mini-content boxes that can be positioned anywhere. Widget positions are determined by the Theme.
-* **Themes** - The layout and the aesthetic skin of HoneyComb. Can override views of any app or widget.
+* **Themes** - The layout and the aesthetic skin of Bolt. Can override views of any app or widget.
 * **Libraries** - Collection of PHP Classes that helps Kohana perform specific tasks. Library examples: authentication, models or ORMs, mptt.
 * **Plugins** - Modules classified as plugins for WYSIWYG`` editors, comments, or anything that inserts content on certain events
 
 Apps, Widgets, Libraries, and Plugins are all Kohana Modules which follow a certain naming convention for Routes.
 
-The 3 Files that HoneyComb extended from Kohana
+The 3 Files that Bolt extended from Kohana
 ===============================================
 
-**HoneyComb extended 3 important files:**
+**Bolt extended 3 important files:**
 
 * **application/bootstrap.php** to initialize the modules and catch the primary Request's response so it can be inserted and rendered within the theme.
 * **classes/route.php** Change the way how routes are initialized. Some conventions are implented to differentiate internal from external requests. Widgets and Plugin requests are internal.
@@ -39,7 +39,7 @@ For those who are not yet familiar with how Kohana works, changing or overriding
 File #1: bootstrap.php
 ----------------------
 
-HoneyComb is loaded as the first module so it can initialize other modules that are marked as "active". Modules are configured in config/modules.php
+Bolt is loaded as the first module so it can initialize other modules that are marked as "active". Modules are configured in config/modules.php
 A Helper loads the rest of the modules based on how the modules are configured.
 
 File #2: classes/route.php
@@ -47,13 +47,13 @@ File #2: classes/route.php
 
 Routes in the module's init.php should follow simple a convention in naming the route. This is to avoid conflicts with other modules.
 
-### How does Routes in HoneyComb work?
+### How does Routes in Bolt work?
 
-HoneyComb will not limit module developers from having routes customized to their wants. The developer is responsible in composing routes that won't conflict with other module's routes.
+Bolt will not limit module developers from having routes customized to their wants. The developer is responsible in composing routes that won't conflict with other module's routes.
 
 **A Simple Route Naming Convention**
 
-The only thing that HoneyComb requires in creating routes is their proper naming. Honeycomb needs to distiguish which routes are for Apps, Widgets, and Plugins.
+The only thing that Bolt requires in creating routes is their proper naming. Honeycomb needs to distiguish which routes are for Apps, Widgets, and Plugins.
 
 Routes for Apps are accessible via the Main Request.
 
@@ -128,7 +128,7 @@ Me and my friends who'll contribute are coming from an extensive CMS experience 
 I think we have a pretty good idea of how to build a good CMS. This project is inspired by those Big 3. If there is a Framework that can take the best features from those CMSs and put it into one dream CMS, that's Kohana 3. 
 
 So the difference of this CMS from other Kohana 3 CMSs will be the "experience". Take Wordpress's ease of use, Drupal's modularity, Joomla's balance of both,
-then the powerful flexibility of Kohana 3's HMVC Framework, put it into one CMS -- that's HoneyComb CMS. At least that's what we're planning.
+then the powerful flexibility of Kohana 3's HMVC Framework, put it into one CMS -- that's Bolt CMS. At least that's what we're planning.
 
 Of course everyone can dream and promise all those nice things. But I'm determined to make this dream come true because of one practical reason: our livelihood depends on it. 
 However, this practical reason is not my primary reason. My primary reason is simple: I enjoy doing it.
@@ -144,7 +144,7 @@ Here are some development principles that this project is following:
 * **Focus on the Users first** - In the development process, I just built the core(which is basically done already) then my focus will move to the user interface. 
 I would love to provide some "developer friendly" tools like easy creation of tables, and database syncing utilities but I think the developers can take care of themselves. 
 It's the end users that we'll have to focus on first.
-* **Easy Come, Easy Go** - Existing apps for Kohana 3 can easily be used or ported inside HoneyComb. Apps for HoneyComb can also be easily used outside of it.
+* **Easy Come, Easy Go** - Existing apps for Kohana 3 can easily be used or ported inside Bolt. Apps for Bolt can also be easily used outside of it.
 
 Some Technical Mumbo-Jumbo
 ==========================
@@ -152,15 +152,15 @@ Some Technical Mumbo-Jumbo
 More on Widgets
 ---------------
 
-With HMVC comes a very practical way of rendering Widgets. HoneyComb Widgets is very similar to how "Modules" in Joomla work, 
+With HMVC comes a very practical way of rendering Widgets. Bolt Widgets is very similar to how "Modules" in Joomla work, 
 except that it doesn't necessarily have to be separate from the main app. 
 
-Apps can have controllers and actions that responds to internal requests. Other apps can call these actions, and HoneyComb
+Apps can have controllers and actions that responds to internal requests. Other apps can call these actions, and Bolt
 can render the response as Widgets. It's not even necessary that only internal request calls
 can access it. As long as there's a widget or app route to this controller-action, it can be called.
 
 Widgets are commonly rendered inside a theme's template. Widgets are not rendered alone. 
-They are organized into groups called "positions". The HoneyComb template does not render a single Widget directly,
+They are organized into groups called "positions". The Bolt template does not render a single Widget directly,
 it renders a widget position. A widget position can have one or more widgets. If a position doesn't have a widget, nothing will be rendered.
 
 Widgets are managed on a config file for now. A GUI in the admin backend is planned in the future. Widgets are configured in config/widgets.php
@@ -250,7 +250,7 @@ Planned Features for Version 1.0
 * **Admin Interface** Admin section organizes all administrative actions allowed for an app.
 * **Pages App** Pages arrange the frontend contents of your site. You can classify them into groups. A page can be a simple static html(from file or database) or it can point to an app or a remote link. 
 Pages app provides a widget to display groups of links. Displaying a page group widget is how you display "Menus".
-* **User Manager** Basic user manager for HoneyComb. Admin panel for managing users, login forms, and registration forms.
+* **User Manager** Basic user manager for Bolt. Admin panel for managing users, login forms, and registration forms.
 * **App Manager** Enable/Disable apps. Set various configurations for the app like *alias*.
 * **Widget Manager** Position Widgets anywhere depending on the Theme. Create instances of Widgets with different configurations. Widgets can be displayed or hidden in different pages.
 * **Global Configuration** Admin GUI for site-wide configuration.

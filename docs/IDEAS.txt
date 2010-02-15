@@ -1,7 +1,7 @@
-Buzz - A Simple Forum for HoneyComb CMS
-DocHive - Document Manager for HoneyComb CMS
+Buzz - A Simple Forum for Bolt CMS
+DocHive - Document Manager for Bolt CMS
 
-Official ORM For HoneyComb will be Jelly.
+Official ORM For Bolt will be Jelly.
 
 When Creating a new page . . .
 

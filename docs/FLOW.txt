@@ -1,27 +1,27 @@
-h1. The 3 Files that HoneyComb extended from Kohana
+h1. The 3 Files that Bolt extended from Kohana
 
-HoneyComb extended 3 important files:
+Bolt extended 3 important files:
 
 * **application/bootstrap.php** to initialize the modules.
-* **classes/route.php** to change the way how routes are initialized. Some rules are implented to differentiate internal from external requests. The main request should always go to HoneyComb.
+* **classes/route.php** to change the way how routes are initialized. Some rules are implented to differentiate internal from external requests. The main request should always go to Bolt.
 * **classes/view.php** to figure out if the theme provides an override to the view that's being called.
 
 For those who are not yet familiar with how Kohana works, changing or overriding these files aren't illegal in Kohana. Kohana is built to be extended and overridden. It's not equivalent to "hacking the core".
 
 h2. bootstrap.php
 
-HoneyComb is loaded as the first module to initialize other modules that are marked as "active".
+Bolt is loaded as the first module to initialize other modules that are marked as "active".
 A Helper loads the rest of the modules based on how the modules are configured.
 
 h2. classes/route.php
 
 Routes in the init.php should follow simple a convention in naming the route. This is to avoid conflicts with other modules.
 
-**How does Routes in HoneyComb work?**
+**How does Routes in Bolt work?**
 
 For example, your site is accessed using this url: @http://www.mysite.com/store/products/display/product-id@
 
-HoneyComb gets the first segment to determine which app is being accessed. In this case the app is "store". 
+Bolt gets the first segment to determine which app is being accessed. In this case the app is "store". 
 
 The first segment can be a module name or an alias. Users can assign an alias to apps through the admin backend. Aliases are used by default.
 
@@ -29,7 +29,7 @@ The rest of the url segments is passed to the app. The rest of the segments coul
 
 h3. Route Setting Rule #1: Classify route as pointing to an app
 
-In order for HoneyComb to know which Route to use, the route name should follow a simple convention. Start with app followed by your app's name.
+In order for Bolt to know which Route to use, the route name should follow a simple convention. Start with app followed by your app's name.
 
 @Route::set('app/myappname', '(/<controller>(/<action))')->defaults(array('controller'=>'mycontroller','action'=>'defaultaction'))@
 	
