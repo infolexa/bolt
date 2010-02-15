@@ -6,4 +6,3 @@ Bolt is an easy to use CMS endowed with the flexibility and power of Kohana 3.
 * **Designers** will love it because its theming system is just simple HTML and PHP just like Joomla's.
 
 Excited? Sorry, it's just 5% done.
-
