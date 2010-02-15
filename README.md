@@ -1,4 +1,4 @@
-Bolt is an easy to use CMS endowed with the flexibility and power of Kohana 3. 
+⚡Bolt is an easy to use CMS that inherits the flexibility, power, simplicity, and swiftness of Kohana 3. 
 
 * **Administrators** will love it because it's very easy to use like WordPress or Joomla. 
 * **Site Builders** will love it because it's modular, many aspects are inspired by Drupal.
