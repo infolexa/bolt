@@ -59,3 +59,6 @@
 [submodule "modules/sprig-mptt"]
 	path = modules/sprig-mptt
 	url = git://github.com/banks/sprig-mptt.git
+[submodule "modules/jelly"]
+	path = modules/jelly
+	url = git://github.com/jonathangeiger/kohana-jelly.git
