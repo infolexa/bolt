@@ -1,17 +1,20 @@
 <?php defined('SYSPATH') or die('404 Not Found.');?>
 
 
-<div class="span-11">	
+<div class="grid_9">
+	<div class="box">
+	<fieldset>
+	<legend>Edit Widget</legend>
 	<p>
     <label></label><label for="route">Widget</label> <br>
-	<?php echo ($route['route']->meta('name')) ? $route['route']->meta('name') : $route['name'] ?>
-	<input type="hidden" name="route" value="<?php echo $route['name'] ?>" />
+	<?php echo Widgets::get($widget->widget)->title ?>
+	<input type="hidden" name="widget" value="<?php echo $widget->widget ?>" />
 	<p>
     <label></label><label for="title">Title</label> <br>
 	<input name="title" value="<?php echo $widget->title ?>" type="text"></p>
 	<p>
-    <label></label><label for="position">Position</label> <br>
-	<input name="position" value="<?php echo $widget->position ?>" type="text"></p>
+    <label></label><label for="region">Region</label> <br>
+	<input name="region" value="<?php echo $widget->region ?>" type="text"></p>
 	<p>
     <label></label><label for="ordering">Ordering</label> <br>
 	<input name="ordering" value="<?php echo $widget->ordering ?>" type="text"></p>
@@ -38,22 +41,28 @@
     <label></label><label for="enabled">Enabled</label> <br>
 	<?php echo Form::select('enabled', array('1' => 'Enabled', '0' => 'Disabled'), $widget->enabled) ?>
 	</p>
+	</fieldset>
+	</div>
 </div>
 
-<div class="span-5 last">
-	<h3>Parameters</h3>
+<div class="grid_3">
+	<div class="box">
+		<fieldset>
+			<legend>Parameters</legend>
 	<?php 
-	$params = unserialize($widget->params);
-	if ($route['route']->meta('config'))
+
+	$params = ( ! is_null($widget->params)) ? unserialize($widget->params) : array();
+	
+	try 
 	{
-		echo View::factory($route['route']->meta('config'))
-				->set('params', $params)
-				->render();
-	}else
+		echo Widgets::get($widget->widget)->params($params)->execute('config')->response;
+	}
+	catch(ReflectionException $e)
 	{
-		echo View::factory('admin/widgets/config')
-				->set('params', $route['route']->params($params))
-				->render();
+		echo __('No Configuration Found!');
 	}
 	 ?>
+		</fieldset>
+	</div>
 </div>
+<div class="clear"></div>

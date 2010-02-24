@@ -26,12 +26,11 @@
 			</div>
 			<div class="grid_12">
 				<div class="grid_3">
-					<?php echo Widgets::load('left', 'xhtml') ?>
+					<?php echo Widgets::display('left', 'xhtml') ?>
 				</div>
 				<div class="grid_9">
 					<?php if (count($messages)): ?>
 						
-					<div class="grid_9">
 						<div class="box">
 							<h2>Messages</h2>
 							<div class="block">
@@ -56,13 +55,12 @@
 							?>
 							</div>
 						</div>
-					</div>
 					<?php endif ?>
 					<?php echo $content ?>	
 				</div>
 			</div>
 			<div class="grid_12">
-				<?php echo Widgets::load('footer', 'xhtml') ?>
+				<?php echo Widgets::display('footer', 'xhtml') ?>
 				<div id="kohana-profiler">
 				<?php echo View::factory('profiler/stats') ?>
 				</div>

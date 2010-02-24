@@ -13,7 +13,6 @@
 <?php 
 echo View::factory('admin/widgets/editform')
 	->set('widget', $widget)
-	->set('route', $route)
 	->render() 
 ?>
 

@@ -14,7 +14,7 @@
     <div class="container">
       <h1><?php echo HTML::title() ?></h1>
       <hr>
-		<?php echo Widgets::load('menu', 'xhtml') ?>
+		<?php echo Widgets::display('menu', 'xhtml') ?>
 	  <hr>
       <h2 class="alt">This sample page demonstrates a tiny fraction of what you get with Bolt.</h2>
       <hr>
@@ -36,7 +36,7 @@
         <?php echo $content ?>
       </div>
       <div class="span-7 last">
-        <?php echo Widgets::load('right', 'xhtml') ?>
+        <?php echo Widgets::display('right', 'xhtml') ?>
       </div>
       <hr>
       <h2 class="alt">You may pick and choose amongst these and many more features, so be bold.</h2>
