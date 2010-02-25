@@ -95,4 +95,3 @@ $content = $template->set('content', $response)
 $head = HTML::head(TRUE);
 $token = HTML::token();
 echo str_replace('[HEAD-'.$token.']', $head, $content);
-exit;
