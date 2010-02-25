@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('404 Not Found.');?>
 
 <div id="groupslist">
-	<form action="<?php echo URL::base().HTML::route('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'edit', 'id' => $role->name)) ?>" method="post" accept-charset="utf-8">
+	<form action="<?php echo URL::base().HTML::route('admin/users', array('app' => Apps::aliasof('users'), 'controller' => 'roles', 'action' => 'edit', 'id' => $role->name)) ?>" method="post" accept-charset="utf-8">
 	<fieldset id="edit_group" class="">
 		<legend>Edit Group</legend>
 		<p>

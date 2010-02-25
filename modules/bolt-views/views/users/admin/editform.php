@@ -2,10 +2,11 @@
 
 
 	
-<?php foreach ($user->inputs() as $label => $input): ?>
+<?php foreach ($user->meta()->fields as $label => $field): ?>
 	<p>
-    <label><?php echo $label ?></label> <br />
-	<?php echo $input ?>
+    <label><?php echo ucwords(Inflector::humanize($label)) ?></label> <br />
+	<?php echo $user->input($label) ?>
 	</p>
+	
 <?php endforeach ?>
 	

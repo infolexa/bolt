@@ -17,7 +17,7 @@
 		?>
 		<tr class="<?php echo $row ?>">
 			<td><input type="checkbox" name="pages[]" value="<?php echo $page->id ?>" /></td>
-			<td><?php echo str_repeat('&nbsp&nbsp&nbsp;&nbsp&nbsp;', ( $page->lvl - 2)). HTML::aroute('pages', array('group' => $group, 'action' => 'edit', 'id' => $page->id), $page->title) ?></td>
+			<td><?php echo str_repeat('&nbsp&nbsp&nbsp;&nbsp&nbsp;', ( $page->lvl - 2)). HTML::aroute('admin/pages', array('group' => $group, 'action' => 'edit', 'id' => $page->id), $page->title) ?></td>
 			<td><?php echo $page->lvl ?></td>
 		</tr>
 		<?php endforeach ?>

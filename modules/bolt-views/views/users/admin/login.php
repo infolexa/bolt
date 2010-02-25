@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('404 Not Found.');?>
 
 <div style="width: 500px; margin: 0 auto;">
-	<form action="<?php echo URL::site(html::route('users/guest', array('action' => 'login'))) ?>" method="post" name="loginform">
+	<form action="<?php echo URL::site(html::route('admin/users/guest', array('action' => 'login'))) ?>" method="post" name="loginform">
 	<fieldset class="login">
 	<legend>Login</legend>
 

@@ -2,7 +2,7 @@
 
 <h2>Create User</h2>
 
-<form action="<?php echo URL::base().HTML::route('users/manage', array('action' => 'create')) ?>" method="post" accept-charset="utf-8">
+<form action="<?php echo URL::base().HTML::route('admin/users/manage', array('action' => 'create')) ?>" method="post" accept-charset="utf-8">
 	
 	
 	<div class="buttons">
@@ -13,6 +13,7 @@
 	</div>
 
 <?php 
+
 echo View::factory('users/admin/editform')
 	->set('user', $user)
 	->render() 

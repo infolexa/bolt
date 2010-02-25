@@ -2,7 +2,7 @@
 
 <h2>Edit User [<?php echo $user->username ?>]</h2>
 
-<form action="<?php echo URL::base().HTML::route('users/manage', array('action' => 'edit', 'id' => $user->username)) ?>" method="post" accept-charset="utf-8">
+<form action="<?php echo URL::base().HTML::route('admin/users/manage', array('action' => 'edit', 'id' => $user->username)) ?>" method="post" accept-charset="utf-8">
 	
 	<div class="buttons">
 		<input type="submit" name="createbutton" value="Save and Go Back to List" />

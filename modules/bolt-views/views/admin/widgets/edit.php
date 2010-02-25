@@ -2,7 +2,7 @@
 
 <h2>Edit Widget [<?php echo $widget->title ?>]</h2>
 
-<form action="<?php echo URL::base().HTML::route('widgets', array('type' => $type, 'action' => 'edit', 'id' => $id)) ?>" method="post" accept-charset="utf-8">
+<form action="<?php echo URL::base().HTML::route('admin/widgets', array('type' => $type, 'action' => 'edit', 'id' => $id)) ?>" method="post" accept-charset="utf-8">
 	
 	<div class="span-16 buttons last">
 		<input type="submit" name="createbutton" value="Save and Go Back to List" />

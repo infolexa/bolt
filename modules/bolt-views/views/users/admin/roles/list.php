@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') or die('404 Not Found.');?>
-<form action="<?php echo URL::base().HTML::route('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'create')) ?>" method="post" accept-charset="utf-8">
+<form action="<?php echo URL::base().HTML::route('admin/users', array('app' => Apps::aliasof('users'), 'controller' => 'roles', 'action' => 'create')) ?>" method="post" accept-charset="utf-8">
 	<table>
 		<thead>
 			<tr>
@@ -15,9 +15,9 @@
 			$row = ($row == 'odd') ? 'even' : 'odd';
 		?>
 		<tr class="<?php echo $row ?>">
-			<td><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'groups', 'action' => 'edit', 'id' => $role->name), $role->title) ?> <em>(<?php echo $role->name ?>)</em></td>
+			<td><?php echo HTML::aroute('admin/users', array('app' => Apps::aliasof('users'), 'controller' => 'roles', 'action' => 'edit', 'id' => $role->name), $role->title) ?> <em>(<?php echo $role->name ?>)</em></td>
 			<td><?php echo $role->description ?></td>
-			<td><?php echo HTML::aroute('users', array('app' => Apps::aliasof('users'), 'controller' => 'permissions', 'action' => 'list', 'id' => $role->name), 'Edit Permissions') ?></td>
+			<td><?php echo HTML::aroute('admin/users', array('app' => Apps::aliasof('users'), 'controller' => 'permissions', 'action' => 'list', 'id' => $role->name), 'Edit Permissions') ?></td>
 		</tr>
 		<?php endforeach ?>
 		</tbody>
