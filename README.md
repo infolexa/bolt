@@ -82,13 +82,13 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 	
 	**You declare a Route for the site frontend like this:**
-	`
-	Route::set('site/myapp', '<app>(/<controller>(/<action>(/<id>)))', array('controller' => 'defaultcontroller|mycontroller|othercontroller'))
-		->defaults(array(
-			'controller' => 'defaultcontroller',
-			'action'     => 'index',
-		));
-	`	
+	
+		Route::set('site/myapp', '<app>(/<controller>(/<action>(/<id>)))', array('controller' => 'defaultcontroller|mycontroller|othercontroller'))
+			->defaults(array(
+				'controller' => 'defaultcontroller',
+				'action'     => 'index',
+			));
+
 	Notice that the Route name is prefixed with `site/`. You must also specify which controllers are accessible via this route through the Regex parameter.
 	
 	Notice also that the Route name `site/myapp` has a second segment `myapp`. The second segment should always be the name of your app. 
@@ -99,13 +99,13 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	your app's name will be used. App aliases can be set by the Site Administrators for Search Engine Friendly and Human Readable URLs. 
 	
 	**You declare a Route for the admin backend like this:**
-	`
-	Route::set('admin/myapp', '<app>(/<controller>(/<action>(/<id>)))', array('controller' => 'defaultcontroller|mycontroller|othercontroller'))
-		->defaults(array(
-			'controller' => 'defaultcontroller',
-			'action'     => 'index',
-		));
-	`
+	
+		Route::set('admin/myapp', '<app>(/<controller>(/<action>(/<id>)))', array('controller' => 'defaultcontroller|mycontroller|othercontroller'))
+			->defaults(array(
+				'controller' => 'defaultcontroller',
+				'action'     => 'index',
+			));
+
 	If your app has admin pages, you need to use admin specific routes. Some magic is going on here. `admin` is automatically appended to the URI. 
 	So on reverse routing, the URI can look like this: `http://www.mydomain.com/admin/defaultcontroller/index/id`. 
 	
@@ -118,14 +118,14 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 	You don't need a route to make your widgets accessible, all you have to do is declare them in your extension's init.php, where you also declare your app's routes.
 	
-	`Widgets::register('mywidget')
-		->title('Title for My Widget')
-		->params(array(
-			'directory'  => 'myapp',
-			'controller' => 'defaultcontroller',
-			'action'     => 'samplewidget',
-		));
-	`
+		Widgets::register('mywidget')
+			->title('Title for My Widget')
+			->params(array(
+				'directory'  => 'myapp',
+				'controller' => 'defaultcontroller',
+				'action'     => 'samplewidget',
+			));
+
 	
 	There will be more discussion about Widgets in another Chapter.
 	
@@ -139,27 +139,27 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 	For guests, you declare permissions like this on the init.php of your app:
 	
-	`Permissions::set('guest/myapp', array(
-		'access myapp page',
-		'access myapp anotherpage',
-		'comment on myapp apge',
-	));
-	`
+		Permissions::set('guest/myapp', array(
+			'access myapp page',
+			'access myapp anotherpage',
+			'comment on myapp apge',
+		));
+	
 	
 	For members, it's like this:
 	
-	`Permissions::set('member/myapp', array(
-		'create myapp page',
-		'edit myapp page',
-	));
-	`
+		Permissions::set('member/myapp', array(
+			'create myapp page',
+			'edit myapp page',
+		));
+
 	
 	For admins, it's like this:
 	
-	`Permissions::set('admin/myapp', array(
-		'delete myapp page',
-	));
-	`
+		Permissions::set('admin/myapp', array(
+			'delete myapp page',
+		));
+
 	
 	Admins will automatically inherit the permissions for guests and members.
 	
@@ -173,24 +173,22 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 	For your site controllers do something like this:
 	
-	`
-    class myapp\_defaultcontroller extends Site\_Controller{
-		
-		public function action_index()
-		{
+	    class myapp_defaultcontroller extends Site_Controller{
+
+			public function action_index()
+			{
 			
+			}
 		}
-	}
-	`
 	
 	Or for the admin:
 	
-	`class myapp\_defaultcontroller extends Admin\_Controller{
+		class myapp_defaultcontroller extends Admin_Controller{
 		
-		public function action_index()
-		{
+			public function action_index()
+			{
 			
+			}
 		}
-	}`
 	
 	These Site and Admin controllers have a default `before()` methods that checks permissions automatically.
