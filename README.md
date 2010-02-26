@@ -101,9 +101,10 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	
 	Notice also that the Route name `site/myapp` has a second segment `myapp`. The second segment should always be the name of your app. 
 	You can create many other routes with different names like `site/myapp/firstroute` or `site/myapp/secondroute` but it should always begin with `site/myapp`.
+	You don't need to set the `directory` parameter because it will always be the name of your app.
 	
 	Another important thing to mention is that you should always prefix your Route's URI with `<app>`. You don't need to adhere to this convention if you really know what you're doing.
-	But it's strongly suggested to avoid conflicts with other routes. When Reverse routing is used, `<app>` will be replaced by your app's alias. If your app doesn't have an alias,
+	But it's strongly suggested to avoid conflicts with other routes. When Reverse routing is used, `<app>` will be replaced by your app's alias. Alias is a "slug" for your app. If your app doesn't have an alias,
 	your app's name will be used. App aliases can be set by the Site Administrators for Search Engine Friendly and Human Readable URLs. 
 	
 	**You declare a Route for the admin backend like this:**
@@ -117,12 +118,12 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	If your app has admin pages, you need to use admin specific routes. Some magic is going on here. `admin` is automatically appended to the URI. 
 	So on reverse routing, the URI can look like this: `http://www.mydomain.com/admin/defaultcontroller/index/id`. 
 	
-	The reason that you don't need to put `admin` manually in the URI like this `admin/<app>(/<controller>(/<action>(/<id>)))` is because `admin` can also have an alias.
-	You can hide your admin backend to a different URI segment like `mysecretadminsection`. It's also shorter to do it that way.
+	Besides being a shortcut, the reason that you don't need to put `admin` manually in the URI like this `admin/<app>(/<controller>(/<action>(/<id>)))` is because `admin` can also have an alias.
+	That means you can hide your admin backend to a different URI segment like `mysecretadminsection`. You can then access your admin section like this `http://www.mydomain.com/mysecretadminsection` instead of `http://www.mydomain.com/admin`.
 	
 3. **Declaring Widgets**
 
-	Unlike other CMS's, Bolt's Widgets aren't necessarily separate from your app. Widgets are simply HMVC calls. Widgets can reside in the same controller as the app.
+	Unlike other CMS's, Bolt's Widgets aren't necessarily separate from your app. Widgets are simply HMVC calls. Thus, widgets can reside in the same controller as the app. It can also be a stand alone widget.
 	
 	You don't need a route to make your widgets accessible, all you have to do is declare them in your extension's init.php, where you also declare your app's routes.
 	
@@ -139,7 +140,8 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	
 4. **Declaring Permissions**
 	
-	Bolt has 3 main kinds of users: Guests, Members, Administrators. You can create unlimited groups of users under Members and also unlimited groups of users under Administrators. Each Group can has fine grained permissions management.
+	Bolt has 3 main kinds of users and nothing more: Guests, Members and Administrators. You can create unlimited groups of users under Members and also unlimited groups of users under Administrators. 
+	Each Group can have fine grained permissions management similar to Drupal.
 	
 	You can't create a user group under Guests.
 
@@ -155,14 +157,12 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 			'comment on myapp apge',
 		));
 	
-	
 	For members, it's like this:
 	
 		Permissions::set('member/myapp', array(
 			'create myapp page',
 			'edit myapp page',
 		));
-
 	
 	For admins, it's like this:
 	
@@ -171,12 +171,12 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 		));
 
 	
-	Admins will automatically inherit the permissions for guests and members.
+	Groups under Administrators will automatically inherit the permissions for guests and members. You can't remove guest and member permissions from the Admin Groups.
 	
 	You can assign guest permissions to members but you can't assign Member and Admin permissions to guests. You also can't assign Admin permissions to Members.
 	
 	This is just a basic declaration of permissions. More details will be discussed in another chapter. 
-	But as a preview, you can specify the directories, controllers and actions related to the permission. 
+	But as a preview, you can specify the controllers and actions related to the permission. 
 	This will allow Bolt to automatically check for the user's permissions when certain controllers are accessed.
 	
 5. **Extending Bolt's Controllers**
