@@ -15,7 +15,8 @@
 I. Introduction
 ---------------
 
-Bolt is the fusion of many good concepts from different CMS's based on years of experience using the 3 most popular: Joomla, Drupal and Wordpress. 
+Bolt is the fusion of many good concepts from the 3 most popular: Joomla, Drupal and Wordpress. 
+With years of experience using these 3, we've gathered great ideas and in some cases, improved on them.
 But creating this CMS quickly would have been nearly impossible without its foundational framework - Kohana 3.
 
 **Some terms used in Bolt:**
