@@ -38,13 +38,13 @@ check [this article](http://techportal.ibuildings.com/2010/02/22/scaling-web-app
 **There's nothing you can't extend**
 
 Those already familiar with Kohana 3 will know that any CMS or web application built on top of it will be very easy to extend and customize. Kohana 3's major feature is not only its ***HMVC architectural pattern*** but also its ***Cascading File System***. 
-This clever and unique filesystem allows developers to extend or override anything, any app/module/plugin for Bolt is extensible and overridable, even Bolt's and Kohana 3's Core files. 
+This clever and unique filesystem allows developers to extend or override anything, any extension for Bolt is extendable and overridable, even Bolt's and Kohana 3's Core files. 
 Websites built with Bolt can be fully customized without hacking any core file.
 
 **What is Bolt then?**
 
 Kohana 3 is a lean and mean framework, it does nothing else but to provide developers with libraries and simple, non-restrictive patterns that make building web applications faster and easier than many other frameworks.
-Bolt is simply a module for Kohana 3. It mostly contains the user interfaces(GUI) and libraries to easily manage a website system. 
+Bolt is simply a module for Kohana 3. It mainly provides the user interfaces(GUI) and libraries, and some additional conventions to easily manage a website system. 
 
 Bolt provides the user interface to manage many aspects of a website like the following:
 
@@ -61,23 +61,28 @@ II. Conventions
 ---------------
 *Note: This section is particularly useful to developers who understand Kohana 3.*
 
-Since Bolt is a CMS that anticipates many 3rd party developers to contribute extensions, it has added some conventions alongside Kohana 3's own convention to avoid conflicts between extensions. 
+Since Bolt is a CMS that anticipates many 3rd party developers to contribute extensions, it has added some conventions alongside Kohana 3's own conventions to avoid conflicts between extensions. 
 The Cascading File System is flexible indeed, but it opens up potential conflicts if developers are not careful enough.
 
-1. **Encapsulate your extension inside a directory with the same name as your extension**
+If you're a developer who would like to develop extensions that can be used inside Bolt, just follow these additional conventions. Bolt extensions are simply Kohana 3 Modules. 
+Bolt just provides an interface that wraps around your Kohana 3 Module.
 
-	Suppose you created a bolt app named `myapp`. You should then put your helpers and libraries inside `/classes/myapp`. 
+1. **Encapsulate your extensions inside a directory with the same name as your extension**
+
+	Suppose you created a Bolt App named `myapp`. You should then put your helpers and libraries inside `classes/myapp`. 
 	
 	Your controllers should be located inside `classes/controller/myapp`.
 	
 	Your models should be located inside `classes/model/myapp` which will consequently have a table prefix `myapp_`.
 	
 	Keep the name of your extension as one word. Only ASCII English alphabet characters are allowed, no spaces, no underscores, no hyphen. 
-	You can use the extension Title to describe your extension more clearly. Name is supposed to be a unique and short identifier for your extension.
+	You can use the extension Title to describe your extension more clearly. Your app's name is simply a unique and short identifier for your extension.
+	
+	*Note: This convention can become obsolete when PHP Namespaces become widely adopted.*
 	
 2. **There are 2 kinds of Routes**
 
-	Bolt has a Site section and an Admin section. Site is what we commonly call the Frontend. Admin is the Backend. Only Administrators are allowed to access the admin. 
+	Bolt has a Site section and an Admin section. Site is what we commonly call the Frontend. Admin is the Backend. Only Administrators are allowed to access the admin backend. 
 	When you set Routes, you must specify which ones are for the site, and which ones are for the admin. 
 	
 	
@@ -89,13 +94,15 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 				'action'     => 'index',
 			));
 
-	Notice that the Route name is prefixed with `site/`. You must also specify which controllers are accessible via this route through the Regex parameter.
+	Notice that the Route name is prefixed with `site/`. This is used to indicate that this route is only for the site frontend.
+	
+	It is also strongly suggested that you specify which controllers are accessible via this route through the Regex parameter. This is a precaution to avoid conflicts.
 	
 	Notice also that the Route name `site/myapp` has a second segment `myapp`. The second segment should always be the name of your app. 
 	You can create many other routes with different names like `site/myapp/firstroute` or `site/myapp/secondroute` but it should always begin with `site/myapp`.
 	
 	Another important thing to mention is that you should always prefix your Route's URI with `<app>`. You don't need to adhere to this convention if you really know what you're doing.
-	But it's strongly suggested to avoid conflicts with other routes. When Reverse routing is used, `<app>` will be replaced with your app's alias. If your app doesn't have an alias,
+	But it's strongly suggested to avoid conflicts with other routes. When Reverse routing is used, `<app>` will be replaced by your app's alias. If your app doesn't have an alias,
 	your app's name will be used. App aliases can be set by the Site Administrators for Search Engine Friendly and Human Readable URLs. 
 	
 	**You declare a Route for the admin backend like this:**
@@ -131,9 +138,11 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 4. **Declaring Permissions**
 	
-	Bolt has 3 main kinds of users: Guests, Members, Admins. You can create an unlimited groups of users under Members with fine grained permissions management, and also an unlimited groups of users under Admin.
+	Bolt has 3 main kinds of users: Guests, Members, Administrators. You can create unlimited groups of users under Members and also unlimited groups of users under Administrators. Each Group can has fine grained permissions management.
 	
-	Members can login to the Site only, and Admins can login to both Site and Admin.
+	You can't create a user group under Guests.
+
+	Members can login to the Site Frontend only. Admins can login to both Site and Admin.
 	
 	Because of this user structure, permissions are also specific to the 3 kinds of users.
 	
@@ -163,7 +172,9 @@ The Cascading File System is flexible indeed, but it opens up potential conflict
 	
 	Admins will automatically inherit the permissions for guests and members.
 	
-	This is just a basic declaration of permissions. More details will be discussed on another chapter. 
+	You can assign guest permissions to members but you can't assign Member and Admin permissions to guests. You also can't assign Admin permissions to Members.
+	
+	This is just a basic declaration of permissions. More details will be discussed in another chapter. 
 	But as a preview, you can specify the directories, controllers and actions related to the permission. 
 	This will allow bolt to automatically check for the user's permissions when certain controllers are accessed.
 	
