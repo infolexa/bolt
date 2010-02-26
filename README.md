@@ -176,7 +176,7 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	
 	This is just a basic declaration of permissions. More details will be discussed in another chapter. 
 	But as a preview, you can specify the directories, controllers and actions related to the permission. 
-	This will allow bolt to automatically check for the user's permissions when certain controllers are accessed.
+	This will allow Bolt to automatically check for the user's permissions when certain controllers are accessed.
 	
 5. **Extending Bolt's Controllers**
 
