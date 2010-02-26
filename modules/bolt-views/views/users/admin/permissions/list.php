@@ -46,7 +46,7 @@
 						$disabled = TRUE;
 					}
 					
-					if ($role->parent == 'guest' AND preg_match('/^login|^admin/', $key)) 
+					if ($role->name == 'guest' AND preg_match('/^login|^admin/', $key)) 
 					{
 						$checked = FALSE;
 						$disabled = TRUE;
