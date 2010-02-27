@@ -58,6 +58,35 @@ Bolt provides the user interface to manage many aspects of a website like the fo
 * Themes and Layouts
 * Other Details like SEO, Media, etc.
 
+**Why another CMS?**
+
+So far we haven't found a CMS that "pleases everybody". Ordinary web publishers love Wordpress because it's easy to use. But developers love to hate it because it's simply not a developer friendly platform.
+
+Site builders love Drupal because it's cleverly modular. Drupal provides "lego blocks", and you build your site putting those "lego blocks" together. But it is quite complicated for ordinary users.
+
+Joomla is like the middle ground. The Admin user interface can be learned with little effort and installing extensions for Joomla is a breeze.
+
+If you're already familiar with Joomla and Drupal, you'll know that you can already do most of the things you need using those two. 
+When it comes to simplicity and user-friendliness, Wordpress is the way to go. But Wordpress is not flexible enough for developers.
+
+So why would you want to use another CMS?
+
+The more you use these CMS's, the more their weaknesses become apparent. Joomla and Drupal both provide some kind of frameworks - or Content Management Frameworks which let's you create modules or extensions for them.
+But if you also have some experience using non-CMF frameworks like Ruby on Rails, Django, CodeIgniter, CakePHP, etc, you'll know that Joomla and Drupal's CMFs are somewhat inferior. 
+
+Joomla claims to be MVC, yes it is, but it's not Agile. It doesn't make you develop web applications faster. MVC is just a convention that you have to painstakingly follow. 
+
+Drupal, although very powerful, imposes unconventional programming patterns to developers. It's hard to understand it without really experienceing Drupal. 
+The whole system of Drupal depends on "hooks" or more commonly called "events". During the course of its execution, Drupal calls functions on certain events. 
+
+If you're used to Object Oriented Programming, you'll be surprised that Drupal doesn't use Classes. Everything are PHP functions named according to Drupal conventions. 
+Although Drupal claims that even without Classes, you can achieve the same benefits of Object Oriented Programming, 
+it doesn't remove the fact that the learning curve is steep and it forces you to get used to something that's not widely adopted outside Drupal. 
+
+Yes, we don't like how things are done in Drupal and Joomla and Wordpress. The Web is evolving rapidly, and it's always helpful to find the fastest and most efficient way to do things.
+
+
+
 II. Conventions
 ---------------
 *Note: This section is particularly useful to developers who understand Kohana 3.*
@@ -118,7 +147,7 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	If your app has admin pages, you need to use admin specific routes. Some magic is going on here. `admin` is automatically appended to the URI. 
 	So on reverse routing, the URI can look like this: `http://www.mydomain.com/admin/defaultcontroller/index/id`. 
 	
-	Besides being a shortcut, the reason that you don't need to put `admin` manually in the URI like this `admin/<app>(/<controller>(/<action>(/<id>)))` is because `admin` can also have an alias.
+	Besides being a shortcut, the reason why you don't need to put `admin` manually in the URI like this `admin/<app>(/<controller>(/<action>(/<id>)))` is because `admin` can also have an alias.
 	That means you can hide your admin backend to a different URI segment like `mysecretadminsection`. You can then access your admin section like this `http://www.mydomain.com/mysecretadminsection` instead of `http://www.mydomain.com/admin`.
 	
 3. **Declaring Widgets**
@@ -185,7 +214,7 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	
 	For your site controllers do something like this:
 	
-	    class myapp_defaultcontroller extends Site_Controller{
+	    class MyApp_DefaultController extends Site_Controller{
 
 			public function action_index()
 			{
@@ -195,7 +224,7 @@ Bolt just provides an interface that wraps around your Kohana 3 Module.
 	
 	Or for the admin:
 	
-		class myapp_defaultcontroller extends Admin_Controller{
+		class MyApp_DefaultController extends Admin_Controller{
 		
 			public function action_index()
 			{
