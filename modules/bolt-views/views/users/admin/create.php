@@ -12,12 +12,7 @@
 		<input type="button" name="cancelbutton" value="Cancel" />
 	</div>
 
-<?php 
-
-echo View::factory('users/admin/editform')
-	->set('user', $user)
-	->render() 
-?>
+	<?php echo $editform ?>
 
 	<div class="buttons">
 		<input type="submit" name="createbutton" value="Save and Go Back to List" />

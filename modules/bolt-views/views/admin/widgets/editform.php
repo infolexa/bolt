@@ -55,7 +55,14 @@
 	
 	try 
 	{
-		echo Widgets::get($widget->widget)->params($params)->execute('config')->response;
+		$parameters = Widgets::get($widget->widget)->params($params)->execute('config')->response;
+		if (strlen($parameters) > 3) 
+		{
+			echo $parameters;
+		}else
+		{
+			echo Form::hidden('params[]');
+		}
 	}
 	catch(ReflectionException $e)
 	{
