@@ -3,10 +3,10 @@
 /**
  * Define the side mode (admin or site)
  */
-define('SITEMODE', 'site');
+define('SITEMODE', 'admin');
 
 // Set the full path to the docroot
-define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
+define('DOCROOT', realpath(str_replace('admin', '', dirname(__FILE__))).DIRECTORY_SEPARATOR);
 
 /**
  * The default extension of resource files. If you change this, all resources
