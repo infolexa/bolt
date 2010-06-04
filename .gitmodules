@@ -1,66 +1,66 @@
 [submodule "Bolt Core"]
-    path = modules/bolt
+    path = lib/bolt
     url = git@github.com:boltcms/bolt-core.git
 
 [submodule "Bolt Admin"]
-    path = modules/bolt-admin
+    path = lib/bolt-admin
     url = git@github.com:boltcms/bolt-admin.git
 
 [submodule "Bolt Pages"]
-    path = modules/bolt-pages
+    path = lib/bolt-pages
     url = git@github.com:boltcms/bolt-pages.git
 
 [submodule "Bolt Users"]
-    path = modules/bolt-users
+    path = lib/bolt-users
     url = git@github.com:boltcms/bolt-users.git
 
 [submodule "Sprig by Banks"]
-    path = modules/sprig
+    path = lib/sprig
     url = git://github.com/banks/sprig.git
 
 [submodule "Kolanos Captcha"]
-    path = modules/captcha
+    path = lib/captcha
     url = git://github.com/kolanos/kohana-captcha.git
 
-[submodule "modules/codebench"]
-	path = modules/codebench
+[submodule "lib/codebench"]
+	path = lib/codebench
 	url = git://github.com/kohana/codebench.git
 
-[submodule "modules/database"]
-	path = modules/database
+[submodule "lib/database"]
+	path = lib/database
 	url = git://github.com/kohana/database.git
 
-[submodule "modules/image"]
-	path = modules/image
+[submodule "lib/image"]
+	path = lib/image
 	url = git://github.com/kohana/image.git
 
-[submodule "modules/pagination"]
-	path = modules/pagination
+[submodule "lib/pagination"]
+	path = lib/pagination
 	url = git://github.com/kohana/pagination.git
 
-[submodule "modules/userguide"]
-	path = modules/userguide
+[submodule "lib/userguide"]
+	path = lib/userguide
 	url = git://github.com/kohana/userguide.git
 	
 [submodule "system"]
 	path = system
 	url = git://github.com/kohana/core.git
 
-[submodule "modules/sprig-mptt"]
-	path = modules/sprig-mptt
+[submodule "lib/sprig-mptt"]
+	path = lib/sprig-mptt
 	url = git://github.com/banks/sprig-mptt.git
 
-[submodule "modules/jelly"]
-	path = modules/jelly
+[submodule "lib/jelly"]
+	path = lib/jelly
 	url = git://github.com/jonathangeiger/kohana-jelly.git
 
-[submodule "modules/jelly-auth"]
-	path = modules/jelly-auth
+[submodule "lib/jelly-auth"]
+	path = lib/jelly-auth
 	url = git@github.com:raeldc/jelly-auth.git
-[submodule "modules/kohana-cache"]
-	path = modules/kohana-cache
+[submodule "lib/kohana-cache"]
+	path = lib/kohana-cache
 	url = git://github.com/samsoir/kohana-cache.git
 
-[submodule "modules/bolt-auth"]
-	path = modules/bolt-auth
+[submodule "lib/bolt-auth"]
+	path = lib/bolt-auth
 	url = git@github-bolt:boltcms/bolt-auth.git
