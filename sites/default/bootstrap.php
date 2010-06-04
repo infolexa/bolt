@@ -62,21 +62,13 @@ Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
 Kohana::$config->attach(new Kohana_Config_File);
 
 /**
- * Enable modules. Modules are referenced by a relative or absolute path.
+ * Enable default modules. Modules are referenced by a relative or absolute path.
  */
-Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'pagination' => MODPATH.'pagination', // Paging of results
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	'bolt' => MODPATH.'bolt',
-	'bolt-frontpage' => APPSPATH.'bolt-frontpage'
-	));
 
+Kohana::modules(Kohana::config('libraries')->default);
+
+echo Kohana::debug(Kohana::modules());
+die();
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.

@@ -57,8 +57,8 @@
 [submodule "lib/jelly-auth"]
 	path = lib/jelly-auth
 	url = git@github.com:raeldc/jelly-auth.git
-[submodule "lib/kohana-cache"]
-	path = lib/kohana-cache
+[submodule "lib/cache"]
+	path = lib/cache
 	url = git://github.com/samsoir/kohana-cache.git
 
 [submodule "lib/bolt-auth"]
