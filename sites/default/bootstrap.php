@@ -62,12 +62,20 @@ Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
 Kohana::$config->attach(new Kohana_Config_File);
 
 /**
- * Enable default modules. Modules are referenced by a relative or absolute path.
+ * Load the 2 essential library modules for initialization
  */
+Kohana::modules(array(
+		'bolt'  => MODPATH.'bolt',
+		'database' => MODPATH.'database', 
+	));
 
-Kohana::modules(Kohana::config('libraries')->default);
+/**
+ * Initialize Bolt's installed modules from the database(higher in CFS) and config file
+ */
+Modules::initialize();
 
-echo Kohana::debug(Kohana::modules());
+Modules::load();
+echo Kohana::debug(Kohana::include_paths());
 die();
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
@@ -78,7 +86,7 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'frontpage',
 		'action'     => 'index',
 	));
-	
+
 /**
  * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
  * If no source is specified, the URI will be automatically detected.
