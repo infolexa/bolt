@@ -1,4 +1,4 @@
-<?php defined('SITEMODE') or die('No direct script access.');
+<?php defined('DOCROOT') or die('No direct script access.');
 
 /**
  * The directory in which your site application specific resources are located.

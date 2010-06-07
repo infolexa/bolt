@@ -74,16 +74,20 @@ Kohana::modules(array(
  */
 Modules::initialize();
 
-Modules::load();
-echo Kohana::debug(Kohana::include_paths());
-die();
+$modules = Modules::load();
+
+/**
+ * Define the side mode (admin or site)
+ */
+define('SITEMODE', 'site');
+
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'frontpage',
+		'controller' => 'controller',
 		'action'     => 'index',
 	));
 

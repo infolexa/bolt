@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('404 Not Found.');
 
-class Site_Frontpage extends Controller
+class Frontpage_Site_Controller extends Controller
 {
 	public function action_index()
 	{

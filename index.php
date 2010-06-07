@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Define the side mode (admin or site)
- */
-define('SITEMODE', 'site');
-
 // Set the full path to the docroot
 define('DOCROOT', realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 

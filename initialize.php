@@ -1,4 +1,4 @@
-<?php defined('SITEMODE') or die('No direct script access.');
+<?php defined('DOCROOT') or die('No direct script access.');
 
 // Make the application relative to the docroot
 if ( ! is_dir($application) AND is_dir(DOCROOT.$application))
