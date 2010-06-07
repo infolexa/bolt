@@ -16,8 +16,9 @@ Notes for Kohana Developers
 ===========================
 The CMS is being designed and redesigned. The initial idea was to take Kohana's best ideas and conventions and use it to build a powerful CMS. 
 It turns out that it's not that easy. There are many scenarios to consider. If it's gonna be a CMS system that can accomodate hundreds of 
-Modules(Extensions/Plugins), Kohana's Cascading File System and File Naming Conventions for Auto-Loading will make the system convolluted. 
+Modules(Extensions/Plugins), Kohana's Cascading File System and File Naming Conventions for Auto-Loading will make the system convoluted. 
 
 So to those hoping that this is just a simple CMS module for Kohana, nope this isn't one. The only thing that's pure Kohana in Bolt is the "system"
-directory. Everything else was modified in some way, index.php, bootstrap, the way modules are loaded, etc are all modified. Kohana is a great Foundational Framework for web Apps, but it needs to have some steroids injected to it
-if it's gonna be used for a CMS wherein multiple apps from different developers run on a single website system.
+directory and the Kohana modules. Everything else was modified in some way, index.php, bootstrap, the way modules are loaded, etc are all modified. 
+Kohana is a great Foundational Framework for web Apps, but it needs to have some steroids injected to it if it's gonna be used for a CMS wherein multiple apps 
+from different developers run on a single website system.
